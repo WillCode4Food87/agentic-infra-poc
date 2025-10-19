@@ -1,0 +1,43 @@
+# Infrastructure Orchestrator Configuration
+# Default configuration for infrastructure provisioning
+
+# Azure Settings
+azure:
+  location: eastus
+  subscription_id: null
+  
+# Environment Settings
+environment:
+  name: dev
+  profile: default
+  
+# Resource Settings
+resources:
+  container_registry:
+    enabled: true
+    sku: Basic
+  storage_account:
+    enabled: true
+    sku: Standard_LRS
+  ai_services:
+    enabled: true
+    model: gpt-4o-mini
+  search_service:
+    enabled: true
+    sku: basic
+
+# Deployment Settings
+deployment:
+  dry_run: false
+  what_if: false
+  auto_approve: false
+  
+# Tool Requirements
+tools:
+  required:
+    - az
+    - azd
+    - bicep
+  optional:
+    - docker
+    - git
